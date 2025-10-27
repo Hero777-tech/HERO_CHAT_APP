@@ -8,7 +8,7 @@
   },
   "scripts": {
 
-    "postinstall": "npm install --prefix frontend && cd frontend && npm run build && cd .. && npm install --prefix backend",
+    "postinstall": "cd frontend && npm run build",
 
     "start": "node backend/src/server.js"
   },
