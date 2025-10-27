@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
 // CRITICAL FIX: Base URL for API and Socket connections
-export const BASE_URL = "https://hero-chat-app-ien8.onrender.com";
+export const BASE_URL = "https://hero-chat-app-ien8.onrender.com/api/";
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
