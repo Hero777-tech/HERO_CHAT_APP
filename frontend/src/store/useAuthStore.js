@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
 // CRITICAL FIX: Base URL for API and Socket connections
-export const BASE_URL = "https://hero-chat-app-ien8.onrender.com/api/";
+export const BASE_URL = "https://hero-chat-app-ien8.onrender.com";
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
@@ -17,7 +17,7 @@ export const useAuthStore = create((set, get) => ({
   checkAuth: async () => {
     try {
       // If cookie is present, check with backend
-      const res = await axiosInstance.get("/auth/check");
+      const res = await axiosInstance.get("/api/auth/check");
       set({ authUser: res.data });
 
       // FIX: Robust check to connect socket only with valid user data
@@ -37,7 +37,7 @@ export const useAuthStore = create((set, get) => ({
   signup: async (data) => {
     set({ isSigningUp: true });
     try {
-      const res = await axiosInstance.post("/auth/signup", data);
+      const res = await axiosInstance.post("/api/auth/signup", data);
       set({ authUser: res.data });
 
       toast.success("Account created successfully!");
@@ -53,7 +53,7 @@ export const useAuthStore = create((set, get) => ({
   login: async (data) => {
     set({ isLoggingIn: true });
     try {
-      const res = await axiosInstance.post("/auth/login", data);
+      const res = await axiosInstance.post("/api/auth/login", data);
       set({ authUser: res.data });
 
       toast.success("Logged in successfully");
@@ -69,7 +69,7 @@ export const useAuthStore = create((set, get) => ({
 
   logout: async () => {
     try {
-      await axiosInstance.post("/auth/logout");
+      await axiosInstance.post("/api/auth/logout");
       set({ authUser: null });
       toast.success("Logged out successfully");
       get().disconnectSocket();
