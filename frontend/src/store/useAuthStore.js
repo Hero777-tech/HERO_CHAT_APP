@@ -98,7 +98,7 @@ export const useAuthStore = create((set, get) => ({
       withCredentials: true, // this ensures cookies are sent with the connection
     });
 
-    socket.connect();
+    // socket.connect();
 
     set({ socket });
 
