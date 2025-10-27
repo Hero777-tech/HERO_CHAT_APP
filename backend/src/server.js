@@ -14,8 +14,8 @@ const __dirname = path.resolve();
 const PORT = ENV.PORT || 3000;
 
 app.use(express.json({ limit: "5mb" })); // req.body
-app.use(cors({ origin: "https://suryaaditya.space", credentials: true }));
 app.use(cookieParser());
+app.use(cors({ origin: "https://suryaaditya.space", credentials: true }));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
