@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BASE_URL } from '../stores/useAuthStore'; // Import the base URL
+import { BASE_URL } from '../store/useAuthStore'; // Import the base URL
 
 export const axiosInstance = axios.create({
   baseURL: BASE_URL, // e.g., "https://hero-chat-app-ien8.onrender.com"
