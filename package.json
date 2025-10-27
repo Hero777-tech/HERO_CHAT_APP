@@ -7,9 +7,9 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    // 🛑 This script runs automatically after npm install
+
     "postinstall": "npm install --prefix frontend && cd frontend && npm run build && cd .. && npm install --prefix backend",
-    // 🛑 This is the final command that Render will run
+
     "start": "node backend/src/server.js"
   },
   "keywords": [],
